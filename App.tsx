@@ -9,33 +9,33 @@ import SalesPage from './components/sales/SalesPage';
 declare global {
     interface Window {
         ScrollTrigger: any;
+        ScrollToPlugin: any;
     }
 }
 
 function App() {
   const [quizStep, setQuizStep] = useState<QuizStep>(QuizStep.POSITION);
-  const [selectedPositions, setSelectedPositions] = useState<string[]>([]);
+  const [selectedPosition, setSelectedPosition] = useState<string | null>(null);
   const [selectedStruggle, setSelectedStruggle] = useState<Struggle | null>(null);
 
   useEffect(() => {
     if (window.ScrollTrigger) {
       gsap.registerPlugin(window.ScrollTrigger);
     }
+    if (window.ScrollToPlugin) {
+      gsap.registerPlugin(window.ScrollToPlugin);
+    }
   }, []);
 
   const handleSelectPosition = useCallback((position: string) => {
-    setSelectedPositions(prev =>
-      prev.includes(position)
-        ? prev.filter(p => p !== position)
-        : [...prev, position]
-    );
+    setSelectedPosition(position);
   }, []);
 
   const handleNextStep = useCallback(() => {
-    if (selectedPositions.length > 0) {
+    if (selectedPosition) {
       setQuizStep(QuizStep.STRUGGLE);
     }
-  }, [selectedPositions]);
+  }, [selectedPosition]);
 
   const handleSelectStruggle = useCallback((struggle: Struggle) => {
     setSelectedStruggle(struggle);
@@ -47,7 +47,7 @@ function App() {
       case QuizStep.POSITION:
         return (
           <QuizStep1
-            selectedPositions={selectedPositions}
+            selectedPosition={selectedPosition}
             onSelectPosition={handleSelectPosition}
             onNext={handleNextStep}
           />
@@ -68,7 +68,7 @@ function App() {
       default:
         return (
           <QuizStep1
-            selectedPositions={selectedPositions}
+            selectedPosition={selectedPosition}
             onSelectPosition={handleSelectPosition}
             onNext={handleNextStep}
           />

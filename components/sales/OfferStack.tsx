@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { OfferStackItem } from '../../types';
 
@@ -11,8 +10,7 @@ const OfferStack: React.FC<OfferStackProps> = ({ offer }) => {
     <section className="bg-gray-800 rounded-xl border border-yellow-400/50 p-8 sm:p-12 shadow-2xl shadow-yellow-400/10">
       <div className="grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 className="text-4xl font-extrabold mb-4 text-yellow-400">Get Instant Access</h2>
-          <h3 className="text-2xl font-bold mb-2 text-white">{offer.name}</h3>
+          <h2 className="text-4xl font-extrabold mb-4 text-yellow-400">{offer.name}</h2>
           <p className="text-gray-300 mb-6">{offer.description}</p>
         </div>
         <div className="text-center bg-black p-8 rounded-lg">

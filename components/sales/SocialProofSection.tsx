@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { SocialProof } from '../../types';
 
@@ -24,25 +23,25 @@ const YouTubeIcon = () => (
 
 const SocialProofSection: React.FC<SocialProofProps> = ({ socialProof }) => {
   return (
-    <section className="text-center">
+    <section className="text-center pt-8">
       <h2 className="text-3xl font-bold mb-4">Join Our Community</h2>
       <p className="text-gray-400 mb-8 max-w-2xl mx-auto">Trusted by thousands of players worldwide looking to elevate their game.</p>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
-        <div className="flex items-center gap-4 text-yellow-400">
+        <a href="https://www.instagram.com/coachrafaz/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-yellow-400 transition-opacity duration-300 hover:opacity-80">
             <InstagramIcon />
             <div>
                 <p className="text-3xl font-extrabold text-white">{socialProof.instagram}</p>
                 <p className="text-sm uppercase tracking-wider text-gray-400">Followers</p>
             </div>
-        </div>
+        </a>
         <div className="w-px h-16 bg-gray-700 hidden sm:block"></div>
-        <div className="flex items-center gap-4 text-yellow-400">
+        <a href="https://www.youtube.com/@coachrafaz" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-yellow-400 transition-opacity duration-300 hover:opacity-80">
             <YouTubeIcon />
             <div>
                 <p className="text-3xl font-extrabold text-white">{socialProof.youtube}</p>
                 <p className="text-sm uppercase tracking-wider text-gray-400">Subscribers</p>
             </div>
-        </div>
+        </a>
       </div>
     </section>
   );

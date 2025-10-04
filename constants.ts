@@ -1,14 +1,17 @@
-
 import { Struggle, type SalesPageData } from './types';
 
-export const POSITIONS = [
-  'Centre-Back',
-  'Full-Back',
-  'CDM',
-  'No.8',
-  'CAM (No.10)',
-  'Winger',
-  'Striker',
+export const PLAYER_POSITIONS: { id: string; value: string; label: string; top: string; left: string }[] = [
+    { id: 'st', value: 'Striker', label: 'ST', top: '10%', left: '50%' },
+    { id: 'cam', value: 'CAM (No.10)', label: 'CAM', top: '22%', left: '50%' },
+    { id: 'lw', value: 'Winger', label: 'LW', top: '32%', left: '20%' },
+    { id: 'rw', value: 'Winger', label: 'RW', top: '32%', left: '80%' },
+    { id: 'cm', value: 'No.8', label: 'CM', top: '42%', left: '50%' },
+    { id: 'dm', value: 'CDM', label: 'DM', top: '60%', left: '50%' },
+    { id: 'lb', value: 'Full-Back', label: 'LB', top: '75%', left: '15%' },
+    { id: 'cb1', value: 'Centre-Back', label: 'CB', top: '75%', left: '38%' },
+    { id: 'cb2', value: 'Centre-Back', label: 'CB', top: '75%', left: '62%' },
+    { id: 'rb', value: 'Full-Back', label: 'RB', top: '75%', left: '85%' },
+    { id: 'gk', value: 'Goalkeeper', label: 'GK', top: '90%', left: '50%' },
 ];
 
 export const STRUGGLES: Struggle[] = [
@@ -19,6 +22,8 @@ export const STRUGGLES: Struggle[] = [
   Struggle.ALL,
 ];
 
+const VSL_PLACEHOLDER_URL = "https://placehold.co/1920x1080/1a1a1a/eab308?text=Video+Coming+Soon";
+
 export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
   [Struggle.TECHNIQUE]: {
     "product": "All-In-One Positions Guide",
@@ -26,9 +31,9 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "pre_headline": "Coach Rafaz reveals...",
       "headline": "Master Every Move, Pass & Duel Specific to Your Position",
       "sub_headline": "Unlock your full technical potential and dominate every situation on the pitch.",
-      "vsl_placeholder": "https://picsum.photos/1280/720?random=1",
+      "vsl_placeholder": VSL_PLACEHOLDER_URL,
       "cta_text": "Improve Your Technique Now",
-      "cta_link": "/positions-guide"
+      "cta_link": "#offer-section"
     },
     "benefits": [
       "Perfect every dribble, pass, and 1v1 duel so that you can outplay opponents effortlessly",
@@ -41,7 +46,7 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "description": "In-depth breakdown of every outfield position with over 2 hours of video content.",
       "price": "$29.99",
       "cta_text": "Improve Your Technique Now",
-      "cta_link": "/positions-guide"
+      "cta_link": "#offer-section"
     }],
     "testimonials": [
       "“I never realized how much my positioning and technique were holding me back until I used this guide. Now I dominate my matches!” – Liam, Winger",
@@ -58,9 +63,9 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "pre_headline": "Coach Rafaz reveals...",
       "headline": "Dominate the Pitch with Perfect Positioning & Game Awareness",
       "sub_headline": "Learn exactly where to be, when to move, and how to complement your team.",
-      "vsl_placeholder": "https://picsum.photos/1280/720?random=2",
+      "vsl_placeholder": VSL_PLACEHOLDER_URL,
       "cta_text": "Master Your Tactics Now",
-      "cta_link": "/formations-guide"
+      "cta_link": "#offer-section"
     },
     "benefits": [
       "Master formations and movement patterns so that you can control the game",
@@ -73,7 +78,7 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "description": "All 6–11-a-side formations explained with 7 hours of video content.",
       "price": "$49.99",
       "cta_text": "Master Your Tactics Now",
-      "cta_link": "/formations-guide"
+      "cta_link": "#offer-section"
     }],
     "testimonials": [
       "“My understanding of the game has completely changed. I finally know where to be in every situation.” – Ethan, Midfielder",
@@ -90,9 +95,9 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "pre_headline": "Coach Rafaz reveals...",
       "headline": "Play With Bulletproof Confidence & Trust Your Instincts",
       "sub_headline": "Overcome hesitation, stop second-guessing, and play free like a pro.",
-      "vsl_placeholder": "https://picsum.photos/1280/720?random=3",
+      "vsl_placeholder": VSL_PLACEHOLDER_URL,
       "cta_text": "Boost Your Confidence Now",
-      "cta_link": "/true-baller-guide"
+      "cta_link": "#offer-section"
     },
     "benefits": [
       "Eliminate self-doubt so that you can express your skills fully in matches",
@@ -105,7 +110,7 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "description": "Over 2 hours of video lessons and a 35-page written guide to build unshakable confidence.",
       "price": "$17.99",
       "cta_text": "Boost Your Confidence Now",
-      "cta_link": "/true-baller-guide"
+      "cta_link": "#offer-section"
     }],
     "testimonials": [
       "“I never trusted myself in matches before. Now I feel unstoppable.” – Noah, Striker",
@@ -122,9 +127,9 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "pre_headline": "Coach Rafaz reveals...",
       "headline": "Level Up Your Technical & Tactical Game",
       "sub_headline": "Master your skills and game understanding to dominate every match.",
-      "vsl_placeholder": "https://picsum.photos/1280/720?random=4",
+      "vsl_placeholder": VSL_PLACEHOLDER_URL,
       "cta_text": "Level Up Your Game Now",
-      "cta_link": "/bundle-guide"
+      "cta_link": "#offer-section"
     },
     "benefits": [
       "Improve your technique so that you can confidently execute every move",
@@ -137,7 +142,7 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "description": "Complete technical and tactical training with hours of video content covering all positions and formations.",
       "price": "$64.99",
       "cta_text": "Level Up Your Game Now",
-      "cta_link": "/bundle-guide"
+      "cta_link": "#offer-section"
     }],
     "testimonials": [
       "“Finally a guide that connects technique with tactics. My game has improved massively.” – Lucas, No.8",
@@ -154,9 +159,9 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "pre_headline": "Coach Rafaz reveals...",
       "headline": "Transform Into the Complete Player You Were Meant to Be",
       "sub_headline": "Combine positions, formations, and confidence training for total on-pitch mastery.",
-      "vsl_placeholder": "https://picsum.photos/1280/720?random=5",
+      "vsl_placeholder": VSL_PLACEHOLDER_URL,
       "cta_text": "Transform Completely Now",
-      "cta_link": "/ultimate-system"
+      "cta_link": "#offer-section"
     },
     "benefits": [
       "Master every position so that you can adapt and excel anywhere on the pitch",
@@ -169,7 +174,7 @@ export const SALES_PAGES_DATA: Record<Struggle, SalesPageData> = {
       "description": "Complete training package combining positions, formations, and confidence for total football mastery.",
       "price": "$79.99",
       "cta_text": "Transform Completely Now",
-      "cta_link": "/ultimate-system"
+      "cta_link": "#offer-section"
     }],
     "testimonials": [
       "“Everything in one place. My technique, tactics, and mindset all improved.” – Aiden, Midfielder",
